@@ -18,7 +18,7 @@ export default function Home() {
   let [activeCard, setActiveCard] = useState(1) 
   const [cardPositions, setCardPositions] = useState([0, 0, 0])
   const [showAnimation, setShowAnimation] = useState(false)
-  let cardContainer = document.getElementById("card-container")
+  // let cardContainer = document.getElementById("card-container")
   let scrollCardsInterval:any | null = null
   const startScrolling = () => {
     scrollCardsInterval = setInterval( scrollCards, 5000)
