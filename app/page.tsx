@@ -25,13 +25,13 @@ export default function Home() {
   }
 
 
-  useEffect( () => {
-    setTimeout( () => setShowAnimation(true), 5000)
+  // useEffect( () => {
+  //   setTimeout( () => setShowAnimation(true), 5000)
 
-    // startScrolling();
+  //   // startScrolling();
 
-    return () => {clearInterval(scrollCardsInterval)}
-  }, [showAnimation])
+  //   return () => {clearInterval(scrollCardsInterval)}
+  // }, [showAnimation])
 
   const scrollCards = () => {
     setCardPositions((prevPositions) => 
