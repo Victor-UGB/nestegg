@@ -65,10 +65,12 @@ export default function Home() {
   // );
 
   useEffect( () => {
-    const timer = setInterval(() => {
-      setActiveCard((prevCount) => (prevCount % 3) + 1)
-    }, 5000);
-    return () => clearInterval(timer)
+    if ( typeof window !== 'undefined' ) {
+      const timer = setInterval(() => {
+        setActiveCard((prevCount) => (prevCount % 3) + 1)
+      }, 5000);
+      return () => clearInterval(timer)
+    }
     }, [])
 
   const cards = [
