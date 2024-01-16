@@ -1,3 +1,5 @@
+"use client"
+
 import NavBar from "../navbar";
 import NavLinks from "../navlinks";
 import FooterLinks from "./links-footer";
