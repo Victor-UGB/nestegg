@@ -102,7 +102,7 @@ export default function Home() {
 
   return (
     <main className='md:hidden'>
-      <div className='p-4 mb-6'>
+      <div className='p-4 mb-2'>
         <div className=' mt-16 pb-6 mr-8 border-b'>
           <div className=' font-medium border-gradient text-[#4e4e4e] mx-1 rounded-full mb-4  w-fit pr-4 text-xs border px-6 py-2 relative'>Hassle-free loans</div>
           {/* <Pill1 icon={<ArrowUpRightIcon className='w-5'/>} title={`Step ${activeCard}/3`}/> */}
@@ -139,6 +139,11 @@ export default function Home() {
 
       <div className='pry-gradient pt-16 pb-10 px-4'>
         <div className='py-3 pr-6 text-3xl text-white font-bold'>Tailored Loan Solutions with NestEgg.</div>
+        
+        <div className='text-[white] pb-2  text-sm font-normal'>
+          At Nestegg we’re on a mission to open up access to affordable credit from responsible lenders.
+        </div>
+
         <Card2
           key={0}
           className={`text-white py-4`}
@@ -166,6 +171,10 @@ export default function Home() {
             Financial Supports Using Thorough Analysis
           </div>
           
+          <div className='text-[#4e4e4e] pb-2  text-sm font-normal'>
+            At Nestegg we’re on a mission to open up access to affordable credit from responsible lenders.
+          </div>
+
           <div className=' mt-6'>
             <div className=' my-4 py-4 text-left p-4 border rounded'>
               <div className='my-2'>
