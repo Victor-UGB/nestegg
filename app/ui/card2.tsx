@@ -20,7 +20,7 @@ export default function Card2({icon, title, subtitle, img, className, cta} :
                     />
                 </div>
                 <div className="absolute z-10 right-0 h-132 bg-black bg-opacity-1 top-0"></div>
-                <div className="absolute bottom-1 p-2">
+                <div className="absolute bottom-1 p-2 animate-step-down2">
                     <div className="flex py-2">
                         {/* <div className="p-1 bg-gradient-to-br  from-[#9fe6ff] to-[#09BEF2]  w-fit">{icon}</div> */}
                         <div className="text-md font-bold py-3">{title}</div>

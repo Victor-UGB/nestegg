@@ -30,9 +30,9 @@ const config: Config = {
       },
       animation:{
         'bounce-short': 'bounce 1s ease-in-out 1',
-        'fade-out': 'fadeOut 1s ease-in-out 1',
+        'fade-out': 'fadeOut 1.2s ease-in-out',
         'step-down': 'stepDown .8s ease-in-out',
-        'step-down2' : 'stepDown 1s ease-in-out',
+        'step-down2' : 'stepDown 1.5s ease-in-out',
         'scale-up' : 'scaleUp 3s ease-in-out',
         'step-up' : 'stepUp .3s ease-out',
         'slide-right' : 'slideRight .5s ease-in-out',

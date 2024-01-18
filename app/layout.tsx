@@ -6,6 +6,7 @@ import './globals.css'
 import NavBar from './ui/navbar'
 import Footer from './ui/footer/footer'
 import { useEffect, useState } from 'react'
+import SecNavbar from './ui/navbar/secnavbar'
 
 
 // export const metadata: Metadata = {

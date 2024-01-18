@@ -11,11 +11,17 @@ import Footer from './ui/footer/footer'
 import LoanExplorer from './ui/loanexplorer'
 import { useEffect, useState } from 'react'
 import Card2 from './ui/card2'
+import {cards1, cards2} from '@/app/lib/placeholder-data' 
+
+// const {
+//   cards1,
+//   cards2
+// } = require('../app/lib/placeholder-data')
 
 
 export default function Home() {
   
-  let [activeCard, setActiveCard] = useState(1) 
+  let [activeCard, setActiveCard] = useState(0) 
   const [cardPositions, setCardPositions] = useState([0, 0, 0])
   const [showAnimation, setShowAnimation] = useState(false)
   // let cardContainer = document.getElementById("card-container")
@@ -24,6 +30,17 @@ export default function Home() {
     scrollCardsInterval = setInterval( scrollCards, 5000)
   }
 
+  const [activeCard2, setActivCard2] = useState(0)
+
+  const pointerClicked = (direction : string, activeIndex: number) =>  {
+    console.log(activeIndex, direction)
+
+    if (direction === "next" ) {
+      setActivCard2( (prevIndex) => (prevIndex+1) % cards2.length)
+    } else if (direction === 'previous') {
+      setActivCard2( (prevIndex) => prevIndex === 0? cards2.length - 1 : prevIndex - 1)
+    }
+  }
 
   // useEffect( () => {
   //   setTimeout( () => setShowAnimation(true), 5000)
@@ -71,42 +88,19 @@ export default function Home() {
       }, 5000);
       return () => clearInterval(timer)
     }
+    setInterval(() => {
+      // 
+    })
     }, [])
 
-  const cards = [
-    {
-      id: 1,
-      icon: "",
-      title: "Explore Loans",
-      subtitle: "Quickly explore affordable loans from responsible lenders across UK.",
-      icon2: <InformationCircleIcon className='w-6 '/>,
-      className: "min-w-72 bg-opacity-10 pb-4 text-[#4e4e4e]"
-    },
-    {
-      id: 2,
-      icon: "",
-      title: "Improve Chances",
-      subtitle: "Check your chances & get personalised tips to improve them.",
-      icon2: <InformationCircleIcon className='w-6'/>,
-      className: " min-w-64 bg-opacity-5 text-[#4e4e4e]"
-    },
-    {
-      id:3,
-      icon: <MagnifyingGlassIcon className='w-6'/>,
-      title: "Apply",
-      subtitle: "Apply with confidence (or save for later).",
-      icon2: <InformationCircleIcon className='w-6'/>,
-      className: " min-w-64 bg-opacity-5 text-[#4e4e4e]"
-    }
-  ]
-
+  
   return (
     <main className='md:hidden'>
       <div className='p-4 mb-2'>
-        <div className=' mt-16 pb-6 mr-8 border-b'>
-          <div className=' font-medium border-gradient text-[#4e4e4e] mx-1 rounded-full mb-4  w-fit pr-4 text-xs border px-6 py-2 relative'>Hassle-free loans</div>
+        <div className=' mt-24 pb-6 mr-8 border-b'>
+          <div className='font-medium -z-10 border-gradient text-[#4e4e4e] mx-1 rounded-full mb-4  w-fit pr-4 text-xs border px-6 py-2 relative'>Hassle-free loans</div>
           {/* <Pill1 icon={<ArrowUpRightIcon className='w-5'/>} title={`Step ${activeCard}/3`}/> */}
-          <div className=' font-bold border-gradient text-[#2e2e2e] pr-4 text-3xl relative mb-4'>Get an affordable loan in <span className=' border-gradient border-b text-[#005AAB] border-blue-300 font-light'>3 easy steps.</span></div>
+          <div className='-z-10 font-bold border-gradient text-[#2e2e2e] pr-4 text-3xl relative mb-4'>Get an affordable loan in <span className=' border-gradient border-b text-[#005AAB] border-blue-300 font-light'>3 easy steps.</span></div>
           
           <div className='text-[#4e4e4e] pb-2  text-sm font-normal'>
             At Nestegg we’re on a mission to open up access to affordable credit from responsible lenders.
@@ -120,7 +114,7 @@ export default function Home() {
         <div className='pt-2'>
           {/* <Pill1 icon={<ArrowUpRightIcon className='w-5'/>} title={`Step ${activeCard}/3`}/> */}
           <div className='card-container pt-4 py-2 flex overflow-scroll w-full gap-2'>
-            { cards.map( (card, index) => (
+            { cards1.map( (card:any, index: number) => (
                 <Card1
                 key={index}
                 className={`hero-card ${activeCard == card.id? "scale-100 transition" : "scale-90 transition"} ${card.className}`}
@@ -143,23 +137,27 @@ export default function Home() {
         <div className='text-[white] pb-2  text-sm font-normal'>
           At Nestegg we’re on a mission to open up access to affordable credit from responsible lenders.
         </div>
-
-        <Card2
-          key={0}
-          className={`text-white py-4`}
-          icon={""}
-          title= {" Over £90,000,000 Saved for Clients (as of May 2023)"}
-          subtitle={""}
-          img= {"/seth-reese-GJ92T3mRTEY-unsplash.jpg"}
-          cta={"Get Started"}
+        { cards2.map((card: any, index: number) => (
+          index === activeCard2? 
+          <Card2
+            key={index}
+            className={`text-white py-4 animate-fade-out`}
+            icon={""}
+            title= {card.title}
+            subtitle={""}
+            img= {card.img}
+            cta={card.cta}
         />
+        : ""
+        ))}
+        
 
         <div className='flex justify-center gap-4 mt-3'>
           <div className='bg-white rounded-full p-1'>
-            <ChevronLeftIcon className='w-5' />
+            <ChevronLeftIcon className='w-5' onClick={ () => pointerClicked("previous", activeCard2)} />
           </div>
           <div className='bg-white rounded-full p-1'>
-            <ChevronRightIcon className='w-5'/>
+            <ChevronRightIcon className='w-5' onClick={ () => pointerClicked("next", activeCard2)} />
           </div>
         </div>
       </div>
