@@ -84,7 +84,7 @@ export default function Home() {
 
           <div className='gap-3 flex my-1 mr-10'>
             <PryButton className= " text-xs mt-2 w-full basis-3/5 shadow-md drop-shadow-md shadow-blue-100"> Get Started <ArrowLongRightIcon className='pl-2 w-8'/> </PryButton>
-            <SecButton className='text-xs w-full mt-2 basis-2/5 shadow-md '>How it Works</SecButton>
+            <SecButton className='text-xs w-full mt-2 basis-2/5 '>How it Works</SecButton>
           </div>
         </div>
         <div className='pt-2'>
