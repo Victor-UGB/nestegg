@@ -12,11 +12,7 @@ import LoanExplorer from './ui/loanexplorer'
 import { useEffect, useState } from 'react'
 import Card2 from './ui/card2'
 import {cards1, cards2} from '@/app/lib/placeholder-data' 
-
-// const {
-//   cards1,
-//   cards2
-// } = require('../app/lib/placeholder-data')
+import { motion } from 'framer-motion'
 
 
 export default function Home() {
@@ -42,14 +38,6 @@ export default function Home() {
     }
   }
 
-  // useEffect( () => {
-  //   setTimeout( () => setShowAnimation(true), 5000)
-
-  //   // startScrolling();
-
-  //   return () => {clearInterval(scrollCardsInterval)}
-  // }, [showAnimation])
-
   const scrollCards = () => {
     setCardPositions((prevPositions) => 
       prevPositions.map((pos, index) => {
@@ -68,18 +56,6 @@ export default function Home() {
     }
   };
 
-  // useEffect( () =>  {
-  //   if( !showAnimation ) {
-  //     return
-  //   }
-  //   console.log("show animation activated")
-  //   startScrolling();
-
-  //   return () => clearInterval(scrollCardsInterval)
-  //   requestAnimationFrame(scrollCards)
-  //   // console.log(cardPositions)
-  //  }, [showAnimation]
-  // );
 
   useEffect( () => {
     if ( typeof window !== 'undefined' ) {
@@ -98,7 +74,7 @@ export default function Home() {
     <main className='md:hidden'>
       <div className='p-4 mb-2'>
         <div className=' mt-24 pb-6 mr-8 border-b'>
-          <div className='font-medium -z-10 border-gradient text-[#4e4e4e] mx-1 rounded-full mb-4  w-fit pr-4 text-xs border px-6 py-2 relative'>Hassle-free loans</div>
+          <div className='font-medium -z-10 border-gradient text-[#6e6e6e]  rounded-full mb-1  w-fit pr-4 text-xs  px-4 bg-blue-50 py-2 relative'>Hassle-free loans</div>
           {/* <Pill1 icon={<ArrowUpRightIcon className='w-5'/>} title={`Step ${activeCard}/3`}/> */}
           <div className='-z-10 font-bold border-gradient text-[#2e2e2e] pr-4 text-3xl relative mb-4'>Get an affordable loan in <span className=' border-gradient border-b text-[#005AAB] border-blue-300 font-light'>3 easy steps.</span></div>
           
@@ -115,6 +91,7 @@ export default function Home() {
           {/* <Pill1 icon={<ArrowUpRightIcon className='w-5'/>} title={`Step ${activeCard}/3`}/> */}
           <div className='card-container pt-4 py-2 flex overflow-scroll w-full gap-2'>
             { cards1.map( (card:any, index: number) => (
+              
                 <Card1
                 key={index}
                 className={`hero-card ${activeCard == card.id? "scale-100 transition" : "scale-90 transition"} ${card.className}`}
@@ -173,6 +150,14 @@ export default function Home() {
             At Nestegg we’re on a mission to open up access to affordable credit from responsible lenders.
           </div>
 
+          <motion.div
+                // key={index}
+                initial = {{ opacity: 0, y: -100}}
+                whileInView={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -100}}
+                transition={{ duration: 1 }}
+                viewport={{ once: true }}
+              >
           <div className=' mt-6'>
             <div className=' my-4 py-4 text-left p-4 border rounded'>
               <div className='my-2'>
@@ -190,6 +175,16 @@ export default function Home() {
             </div>
             
           </div>
+          </motion.div>
+
+          <motion.div
+                // key={index}
+                initial = {{ opacity: 0, y: -100}}
+                whileInView={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -100}}
+                transition={{ duration: 1 }}
+                viewport={{ once: true }}
+              >
           <div className=' mt-6'>
             <div className=' my-4 py-4 text-left p-4 border rounded'>
               <div className='my-2'>
@@ -207,6 +202,7 @@ export default function Home() {
             </div>
             
           </div>
+          </motion.div>
         </div>
       </div>
 

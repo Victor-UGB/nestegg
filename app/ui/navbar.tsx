@@ -23,7 +23,7 @@ export default function NavBar(){
                     Are You A lender?
                 </Link>
             </SecNavbar>
-            <div className=" text-white flex justify-between z-10 bg-[#fafafa] px-4 py-2 items-center ">
+            <div className=" text-white flex justify-between z-10 bg-[#fafafa] px-4 py-1 items-center border-b border-blue-50 ">
                 <div className="w-2/6 mx-2">
                     <div className="rounded-xl">
                     <Image
