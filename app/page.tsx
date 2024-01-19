@@ -76,7 +76,7 @@ export default function Home() {
         <div className=' mt-24 pb-6 mr-8 border-b'>
           <div className='font-medium -z-10 border-gradient text-blue-400  rounded-full mb-1  w-fit pr-4 text-xs  px-4 bg-blue-100 py-2 relative'>Hassle-free loans</div>
           {/* <Pill1 icon={<ArrowUpRightIcon className='w-5'/>} title={`Step ${activeCard}/3`}/> */}
-          <div className='-z-10 font-bold border-gradient text-[#2e2e2e] pr-4 text-3xl relative mb-4'>Get an affordable loan in <span className=' border-gradient border-b text-[#005AAB] border-blue-300 font-light'>3 easy steps.</span></div>
+          <div className='-z-10 font-bold border-gradient text-[#2e2e2e] pr-4 text-3xl relative mb-4'>Get an affordable loan in <span className=' border-gradient border-b text-[#005AAB] border-blue-300 font-normal'>3 easy steps.</span></div>
           
           <div className='text-[#4e4e4e] pb-2  text-sm font-normal'>
             At Nestegg we’re on a mission to open up access to affordable credit from responsible lenders.
