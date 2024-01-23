@@ -12,7 +12,7 @@ import LoanExplorer from './ui/loanexplorer'
 import { useEffect, useState } from 'react'
 import Card2 from './ui/card2'
 import {cards1, cards2} from '@/app/lib/placeholder-data' 
-import { motion } from 'framer-motion'
+import { motion, useAnimation } from 'framer-motion'
 
 
 export default function Home() {
@@ -55,6 +55,7 @@ export default function Home() {
       requestAnimationFrame(scrollCards)
     }
   };
+  
 
 
   useEffect( () => {
@@ -108,7 +109,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className='pry-gradient pt-16 pb-10 px-4'>
+      <div className='pry-gradient pt-8 pb-10 px-4'>
         <div className='py-3 pr-6 text-3xl text-white font-bold'>Tailored Loan Solutions with NestEgg.</div>
         
         <div className='text-[white] pb-2  text-sm font-normal'>
